@@ -1,0 +1,13 @@
+@startuml
+class Solution41 {
+    -List<String> nameList
+    -List<String> sortedList
+    -String fileLocation
+
+    +main()
+    'calls each of the below methods
+    +getFileData()
+    +alphabeticSorter(nameList)
+    +outputFileData()
+}
+@enduml
