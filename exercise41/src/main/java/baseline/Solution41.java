@@ -4,22 +4,60 @@
  */
 package baseline;
 
+import java.io.*;
+import java.util.*;
+
 public class Solution41 {
-    /*
-    Create a reader object
-    Create arrayList in order to store strings
-    Create variable to assign each string
+    private List<String> nameList = new ArrayList<>();
+    private List<String> sortedList = new ArrayList<>();
+    private static final File data = new File("data/exercise41_input.txt");
 
-    Use a loop to read the input file
-    from the file read in each name and add it to the arrayList
-    repeat for each line
+    public List<String> getFileData() {
+        ArrayList<String> sArray = new ArrayList<>();
+        try {
+            //create a buffered reader insider a try/catch block
+            try (Scanner sc = new Scanner(data)) {
+                //while the next line is not null
+                while (sc.hasNextLine()) {
+                    //store that line in the String array
+                    sArray.add(sc.nextLine());
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-    Use sort method to sort all the strings
-    Create new object to write a file
+        //return the created String array
+        return sArray;
+    }
+    public List<String> alphabeticalOrderSorter(List<String> nameList){
+        //take the string created above and sort it by last name
+        Collections.sort(nameList);
+        //return the sorted array
+        return nameList;
+    }
+    public void outputFileData(){
+        try{
+            try(BufferedWriter bw = new BufferedWriter(new FileWriter("data\\exercise41_output.txt"))){
+                bw.write("Total of "+ sortedList.size() +"names");
+                bw.write("\n------------------\n");
+                for(int i=0;i<sortedList.size();i++){
+                    bw.write(sortedList.get(i) +"\n");
+                }
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
-    Use a loop to re-write the input file into the output file
+    public static void main(String[] args) {
+        Solution41 s = new Solution41();
+        //call read file function
+        s.nameList = s.getFileData();
+        //pass nameList to alphabeticalOrderSorter
+        s.sortedList = s.alphabeticalOrderSorter(s.nameList);
+        //create the output file
+        s.outputFileData();
 
-    Print out the output file with the number of names in the array
-    Make sure they are printed out in alphabetical order of Last names
-     */
+    }
 }
