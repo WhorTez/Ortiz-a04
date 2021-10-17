@@ -6,24 +6,30 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Solution42 {
-
-    private File data = new File("data/exercise42_input.txt");
+    private final File data = new File("data/exercise42_input.txt");
 
     public List<String> getFileData(){
-        //create a buffered reader insdie
+        ArrayList<String> sArray = new ArrayList<>();
+        try {
+            //create a buffered reader inside
+            try (Scanner sc = new Scanner(data)) {
+                while (sc.hasNextLine()) {
+                    sArray.add(sc.nextLine());
+                }
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         //return the created string
-    }
-
-    public void outputFileData(){
-        //create a buffered writer
-        //for loop through length of the list
-        // print out last name, first name and salary
+        return sArray;
     }
 
     public static void main(String[] args){
         ParseCSV csv = new ParseCSV();
-
-
+        csv.separateData = csv.separateData();
+        csv.lastName = csv.lastNameArray();
+        csv.firstName = csv.firstNameArray();
+        csv.salary = csv.salaryArray();
+        csv.outputEmployees();
     }
-
 }

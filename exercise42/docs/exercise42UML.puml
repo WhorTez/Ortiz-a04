@@ -1,3 +1,24 @@
 @startuml
+class Solution42{
+-data
+'this will store the input/output file location
 
++main()
++getFileData()
+}
+
+class ParseCSV{
+#List<String> separateData
+#List<String> lastNames
+#List<String> firstNames
+#List<String> salary
+
++ separateData
++firstNameArray
++lastNameArray
++salaryArray
++outputEmployees
+}
+
+Solution42 --> ParseCSV
 @enduml
