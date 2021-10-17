@@ -1,3 +1,7 @@
+/*
+ * UCF COP3330 Fall 2021 Assignment 4 Solutions
+ * Copyright 2021 Duane Ortiz
+ */
 package baseline;
 
 import java.io.File;
