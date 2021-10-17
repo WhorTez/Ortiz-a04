@@ -8,20 +8,20 @@ public class Item {
     //contains information of individual items
     String itemName;
     double price;
-    int amount;
+    int quantity;
 
     public String getItemName(){
-        //prompt for the name of the item
+        //get for the name of the item
         return itemName;
     }
 
     public double getPrice(){
-        //prompt for the price of the item
+        //get for the price of the item
         return price;
     }
 
-    public int getAmount(){
-        //prompt for the quantity of the item
-        return amount;
+    public int getQuantity(){
+        //get for the quantity of the item
+        return quantity;
     }
 }

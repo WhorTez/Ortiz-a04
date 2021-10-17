@@ -1,3 +1,27 @@
 @startuml
+class Solution44 {
+Inventory i
 
++main(String[] args)
++String getItemName()
++void getJSONDATA()
++void checkInventory(String item)
+}
+
+class item{
+String name
+double price
+int amount
+
++String getName(): name
++double getPrice(): price
++int getAmount(): amount/quantity
+}
+
+class inventory{
+ArrayList<item> products
+}
+
+inventory --> item
+Solution44 --> inventory
 @enduml

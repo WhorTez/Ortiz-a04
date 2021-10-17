@@ -8,5 +8,5 @@ import java.util.ArrayList;
 
 public class Inventory {
     //contains an array of items created by JSON method
-    ArrayList<Item> products;
+    ArrayList<Item>  product;
 }
