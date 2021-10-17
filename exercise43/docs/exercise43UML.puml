@@ -1,0 +1,20 @@
+@startuml
+class Solution43{
++main()
++getSiteName()
++getSiteAuthor()
++javaFolderAnswer()
++CSSFolderAnswer()
+}
+
+class websiteCreator{
+String out = "Created ./website/"
+String website = "website/"
+
++websiteFolderCreator(String siteName): File
++HTMLCreator(String author, String siteName): File
++javaFolderCreator(String siteName): File
++CSSFolderCreator(String siteName): File
+}
+Solution43 --> websiteCreator
+@enduml
